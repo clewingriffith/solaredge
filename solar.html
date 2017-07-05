@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="refresh" content="300">
+  <script>
+  function setPower(response) {
+    //document.getElementById("power").innerHTML = response.overview.currentPower.power;
+    document.getElementById("power").innerHTML = response.overview.lastDayData.energy;
+  }
+  var tag = document.createElement("script");
+  tag.src = 'https://monitoringapi.solaredge.com/site/491175/overview.json?api_key=9FINK7NJQ9L7FJEMCD9XQC7D023PVRLJ&callback=setPower';
+  document.getElementsByTagName("head")[0].appendChild(tag)
+  </script>
+</head>
+<body>
+
+<h1>Power</h1>
+
+<p><span id="power">?</span>kWh</p>
+
+</body>
+</html>
+
